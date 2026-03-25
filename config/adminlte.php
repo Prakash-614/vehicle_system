@@ -1,5 +1,13 @@
 <?php
 
+use JeroenNoten\LaravelAdminLte\Menu\Filters\ActiveFilter;
+use JeroenNoten\LaravelAdminLte\Menu\Filters\ClassesFilter;
+use JeroenNoten\LaravelAdminLte\Menu\Filters\DataFilter;
+use JeroenNoten\LaravelAdminLte\Menu\Filters\GateFilter;
+use JeroenNoten\LaravelAdminLte\Menu\Filters\HrefFilter;
+use JeroenNoten\LaravelAdminLte\Menu\Filters\LangFilter;
+use JeroenNoten\LaravelAdminLte\Menu\Filters\SearchFilter;
+
 return [
 
     /*
@@ -63,8 +71,8 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<LTE><b>Vehicle</b>_App',
+    'logo_img' => 'vendor/adminlte/dist/img/unnamed.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -298,23 +306,22 @@ return [
     |
     */
 
-    'menu' =>
-     [
-         [
-        'text' => 'Dashboard',
-        'url'  => 'dashboard',
-        'icon' => 'fas fa-tachometer-alt',
-    ],
-    [
-        'text' => 'Vehicle Types',
-        'url'  => 'vehicle-types',
-        'icon' => 'fas fa-car',
-    ],
-    [
-        'text' => 'Vehicles',
-        'url'  => 'vehicles',
-        'icon' => 'fas fa-truck',
-    ],
+    'menu' => [
+        [
+            'text' => 'Dashboard',
+            'url' => 'dashboard',
+            'icon' => 'fas fa-tachometer-alt',
+        ],
+        [
+            'text' => 'Vehicle Types',
+            'url' => 'vehicle-types',
+            'icon' => 'fas fa-car',
+        ],
+        [
+            'text' => 'Vehicles',
+            'url' => 'vehicles',
+            'icon' => 'fas fa-truck',
+        ],
         // Navbar items:
         [
             'type' => 'navbar-search',
@@ -345,13 +352,14 @@ return [
         ],
         ['header' => 'account_settings'],
         [
-            'text' => 'profile',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'Profile',
+            'url' => 'profile',
+            'icon' => 'fas fa-user',
+            'profile_url' => 'profile',
         ],
         [
-            'text' => 'change_password',
-            'url' => 'admin/settings',
+            'text' => 'Change Password',
+            'url' => 'profile#change-password',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
@@ -423,13 +431,13 @@ return [
     */
 
     'filters' => [
-        JeroenNoten\LaravelAdminLte\Menu\Filters\GateFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\HrefFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\SearchFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\ActiveFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\ClassesFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\LangFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\DataFilter::class,
+        GateFilter::class,
+        HrefFilter::class,
+        SearchFilter::class,
+        ActiveFilter::class,
+        ClassesFilter::class,
+        LangFilter::class,
+        DataFilter::class,
     ],
 
     /*

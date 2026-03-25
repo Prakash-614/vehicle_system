@@ -1,0 +1,9 @@
+/* Change sidebar background */
+.main-sidebar {
+    background: linear-gradient(45deg, #ffffff, #000000); /* Indigo color example */
+}
+ 
+/* Optional: change text color */
+.main-sidebar .nav-link {
+    color: #ffffff !important;
+}

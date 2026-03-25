@@ -29,6 +29,7 @@
 
     {{-- Custom stylesheets (pre AdminLTE) --}}
     @yield('adminlte_css_pre')
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
     {{-- Base Stylesheets (depends on Laravel asset bundling tool) --}}
     @if(config('adminlte.enabled_laravel_mix', false))

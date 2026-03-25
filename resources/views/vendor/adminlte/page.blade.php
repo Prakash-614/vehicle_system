@@ -7,7 +7,9 @@
     @stack('css')
     @yield('css')
 @stop
-
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+@endsection
 @section('classes_body', $layoutHelper->makeBodyClasses())
 
 @section('body_data', $layoutHelper->makeBodyData())
